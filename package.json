@@ -1,0 +1,28 @@
+{
+  "name": "puhelinluettelo_backend",
+  "version": "1.0.0",
+  "description": "puhelinluettelo backend, obbv",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juunaz/puhelinluettelo_backend.git"
+  },
+  "author": "Joonas T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juunaz/puhelinluettelo_backend/issues"
+  },
+  "homepage": "https://github.com/juunaz/puhelinluettelo_backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
