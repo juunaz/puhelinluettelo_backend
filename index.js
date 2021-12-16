@@ -52,36 +52,43 @@ let numbers = [
     numbers = numbers.filter(number => number.id !== id)
     response.status(204).end()
   })
-  
-  /*
-  const generateId = () => {
-    const maxId = notes.length > 0
-      ? Math.max(...notes.map(n => n.id))
-      : 0
-    return maxId + 1
+
+  const generateId = (max) => {
+    const newId = Math.floor(Math.random() * max)
+    return newId
   }
   
-  app.post('/api/notes', (request, response) => {
+  app.post('/api/persons', (request, response) => {
     const body = request.body
   
-    if (!body.content) {
+    if (!body.name) {
       return response.status(400).json({ 
-        error: 'content missing' 
+        error: 'Please give a name' 
+      })
+    }
+
+    if (!body.number) {
+      return response.status(400).json({ 
+        error: 'Please give a number' 
+      })
+    }
+
+    if (numbers.find(n => n.name === body.name)) {
+      return response.status(400).json({ 
+        error: 'Name is already in the numberbook' 
       })
     }
   
-    const note = {
-      content: body.content,
-      important: body.important || false,
-      date: new Date(),
-      id: generateId(),
+    const number = {  
+      id: generateId(99999999),
+      name: body.name,
+      number: body.number
     }
   
-    notes = notes.concat(note)
+    numbers = numbers.concat(number)
   
-    response.json(note)
+    response.json(number)
   })
-  */
   
   const PORT = 3001
   app.listen(PORT, () => {
