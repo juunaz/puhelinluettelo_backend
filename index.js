@@ -37,17 +37,18 @@ let numbers = [
     response.send("<p>Phonebook has info for " + amountOfNumbers + " people</p>" + "<p>" + date + "</p>")
     })
 
-
-  /*
-  app.get('/api/notes/:id', (request, response) => {
+  app.get('/api/persons/:id', (request, response) => {
     const id = Number(request.params.id)
-    const note = notes.find(note => note.id === id)
-    if (note) {
-      response.json(note)
+    const person = numbers.find(person => person.id === id)
+    if (person) {
+      response.json(person)
     } else {
-      response.status(404).end()
+      response.sendStatus(404);
     }
   })
+
+
+  /*
 
   app.delete('/api/notes/:id', (request, response) => {
     const id = Number(request.params.id)
