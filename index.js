@@ -30,6 +30,14 @@ let numbers = [
     response.json(numbers)
   })
 
+  app.get('/info', (request, response) => {
+    let amountOfNumbers = numbers.length
+    let date = new Date()
+
+    response.send("<p>Phonebook has info for " + amountOfNumbers + " people</p>" + "<p>" + date + "</p>")
+    })
+
+
   /*
   app.get('/api/notes/:id', (request, response) => {
     const id = Number(request.params.id)
